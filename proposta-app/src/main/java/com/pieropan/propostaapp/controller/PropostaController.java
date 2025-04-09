@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.pieropan.propostaapp.dto.PropostaRequestDTO;
 import com.pieropan.propostaapp.dto.PropostaResponseDTO;
@@ -22,7 +23,10 @@ public class PropostaController {
     @PostMapping
     public ResponseEntity<PropostaResponseDTO> criar(@RequestBody PropostaRequestDTO propostaRequestDTO) {
         PropostaResponseDTO response = propostaService.criar(propostaRequestDTO);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(response.getId())
+            .toUri()).body(response);
     }
 
 }
