@@ -10,6 +10,9 @@ import com.pieropan.propostaapp.dto.PropostaRequestDTO;
 import com.pieropan.propostaapp.dto.PropostaResponseDTO;
 import com.pieropan.propostaapp.service.PropostaService;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @RestController
 @RequestMapping("/proposta")
 public class PropostaController {

@@ -20,5 +20,6 @@ public class PropostaResponseDTO {
     private Double valorSolicitado;
     private Integer prazoPagamento;
     private String observacao;
+    private Boolean aprovada;
 
 }
