@@ -1,5 +1,8 @@
 package com.pieropan.propostaapp.service;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.pieropan.propostaapp.dto.PropostaRequestDTO;
@@ -21,6 +24,10 @@ public class PropostaService {
         propostaRepository.save(proposta);
 
         return PropostaMapper.INSTANCE.convertEntityToDto(proposta);
+    }
+
+    public List<PropostaResponseDTO> obterProposta() {        
+        return PropostaMapper.INSTANCE.convertListEntityToListDto(propostaRepository.findAll());
     }
 
 }
