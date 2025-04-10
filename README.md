@@ -14,6 +14,7 @@ docker run --name proposta-web-container \
     --network minha-rede-banco \
     -p 80:80 \
     -d matheuspieropan/proposta-web
+```
 
 **2. Execução do Contêiner do banco POSTGRES:**
 
@@ -25,14 +26,26 @@ docker run --name propostadb \
     -e POSTGRES_DB=propostadb \
     -p 5432:5432 \
     -d postgres
+```
 
-**2. Execução do Contêiner da interface web para acesso ao POSTGRES:**
+**3. Execução do Contêiner da interface web para acesso ao POSTGRES:**
 
 ```bash
 docker run --name adminer-web \
     --network minha-rede-banco \
     -p 9000:8080 \
     -d adminer
+```
+
+**4. Execução do Contêiner do RabbitMQ:**
+
+```bash
+docker run --name my-rabbit \
+    --network minha-rede-banco \
+    -p 15672:15672 \
+    -p 5672:5672 \
+    -d rabbitmq:3-management
+```
 
 ### Exemplo consulta
 
