@@ -1,3 +1,7 @@
+### Cadastro de proposta e envio para as filas de notificação e análise de crédito
+
+![Modelo de negócio](misc/modelo-de-negocio.png)
+
 ### Gerenciamento de Contêineres Docker para Aplicação "Proposta"
 
 Os comandos abaixo demonstram a criação e execução de contêineres Docker para uma aplicação web chamada "proposta", um banco de dados PostgreSQL e uma ferramenta de administração de banco de dados Adminer, todos interconectados em uma rede Docker personalizada.
@@ -46,18 +50,3 @@ docker run --name my-rabbit \
     -p 5672:5672 \
     -d rabbitmq:3-management
 ```
-
-### Exemplo consulta
-
-POST:
-http://127.0.0.1:8080/proposta
-
-{
-  "nome": "João",
-  "sobrenome": "Silva",
-  "cpf": "123.456.789-00",
-  "telefone": "(31) 99999-8888",
-  "renda": 3500.50,
-  "valorSolicitado": 10000.00,
-  "prazoPagamento": 24
-}

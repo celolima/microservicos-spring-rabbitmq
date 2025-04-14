@@ -9,6 +9,8 @@ import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +21,12 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 
 @Configuration
 public class RabbitMQConfiguration {
+
+    public static final String PROPOSTA_PENDENTE_EXCHANGE = "proposta-pendente.ex";
+
+    public RabbitMQConfiguration(RabbitTemplate rabbitTemplate) {
+        rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
+    }
 
     @Bean
     public Queue criarFilaPropostaPendenteMsAnaliseCredito() {
@@ -52,7 +60,7 @@ public class RabbitMQConfiguration {
 
     @Bean
     public FanoutExchange criarFanoutExchangePropostaPendente() {
-        return ExchangeBuilder.fanoutExchange("proposta-pendente.ex").build();
+        return ExchangeBuilder.fanoutExchange(PROPOSTA_PENDENTE_EXCHANGE).build();
     }
 
     @Bean
@@ -65,5 +73,6 @@ public class RabbitMQConfiguration {
     public Binding criarBindingPropostaPendenteMsNotificacao() {
         return BindingBuilder.bind(criarFilaPropostaPendenteMsNotificacao())
             .to(criarFanoutExchangePropostaPendente());
-    }    
+    }
+
 }
