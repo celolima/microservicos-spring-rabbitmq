@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp;
+package com.marcelo.propostaapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

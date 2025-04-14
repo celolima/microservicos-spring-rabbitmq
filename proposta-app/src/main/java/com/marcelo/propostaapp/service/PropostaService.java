@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp.service;
+package com.marcelo.propostaapp.service;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.pieropan.propostaapp.dto.PropostaRequestDTO;
-import com.pieropan.propostaapp.dto.PropostaResponseDTO;
-import com.pieropan.propostaapp.entity.Proposta;
-import com.pieropan.propostaapp.mapper.PropostaMapper;
-import com.pieropan.propostaapp.repository.PropostaRepository;
+import com.marcelo.propostaapp.dto.PropostaRequestDTO;
+import com.marcelo.propostaapp.dto.PropostaResponseDTO;
+import com.marcelo.propostaapp.entity.Proposta;
+import com.marcelo.propostaapp.mapper.PropostaMapper;
+import com.marcelo.propostaapp.repository.PropostaRepository;
 
 @Service
 public class PropostaService {

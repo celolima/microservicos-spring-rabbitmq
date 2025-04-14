@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp.agendador;
+package com.marcelo.propostaapp.agendador;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.pieropan.propostaapp.entity.Proposta;
-import com.pieropan.propostaapp.repository.PropostaRepository;
-import com.pieropan.propostaapp.service.NotificacaoRabbitMQService;
+import com.marcelo.propostaapp.entity.Proposta;
+import com.marcelo.propostaapp.repository.PropostaRepository;
+import com.marcelo.propostaapp.service.NotificacaoRabbitMQService;
 
 @Component
 public class PropostaSemIntegracao {

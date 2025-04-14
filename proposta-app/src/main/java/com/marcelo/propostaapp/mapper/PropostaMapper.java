@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp.mapper;
+package com.marcelo.propostaapp.mapper;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -7,9 +7,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.pieropan.propostaapp.dto.PropostaRequestDTO;
-import com.pieropan.propostaapp.dto.PropostaResponseDTO;
-import com.pieropan.propostaapp.entity.Proposta;
+import com.marcelo.propostaapp.dto.PropostaRequestDTO;
+import com.marcelo.propostaapp.dto.PropostaResponseDTO;
+import com.marcelo.propostaapp.entity.Proposta;
 
 @Mapper
 public interface PropostaMapper {

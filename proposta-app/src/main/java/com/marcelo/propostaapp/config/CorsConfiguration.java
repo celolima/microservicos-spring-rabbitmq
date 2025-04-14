@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp.config;
+package com.marcelo.propostaapp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

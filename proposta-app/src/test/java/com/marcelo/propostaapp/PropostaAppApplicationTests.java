@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp;
+package com.marcelo.propostaapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

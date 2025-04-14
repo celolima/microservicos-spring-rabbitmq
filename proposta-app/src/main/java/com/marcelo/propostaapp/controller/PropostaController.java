@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp.controller;
+package com.marcelo.propostaapp.controller;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.pieropan.propostaapp.dto.PropostaRequestDTO;
-import com.pieropan.propostaapp.dto.PropostaResponseDTO;
-import com.pieropan.propostaapp.service.PropostaService;
+import com.marcelo.propostaapp.dto.PropostaRequestDTO;
+import com.marcelo.propostaapp.dto.PropostaResponseDTO;
+import com.marcelo.propostaapp.service.PropostaService;
 
 import lombok.AllArgsConstructor;
 

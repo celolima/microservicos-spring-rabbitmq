@@ -1,4 +1,4 @@
-package com.pieropan.propostaapp.entity;
+package com.marcelo.propostaapp.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 

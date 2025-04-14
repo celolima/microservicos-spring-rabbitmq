@@ -1,9 +1,9 @@
-package com.pieropan.propostaapp.service;
+package com.marcelo.propostaapp.service;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
-import com.pieropan.propostaapp.entity.Proposta;
+import com.marcelo.propostaapp.entity.Proposta;
 
 import lombok.AllArgsConstructor;
 
