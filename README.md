@@ -1,8 +1,8 @@
 ### Cadastro de proposta e envio para as filas de notificação e análise de crédito
 
-<div align="center">
+<p align="center">
     ![Modelo de negócio](misc/modelo-de-negocio.png)
-</div>
+</p>
 
 ### Gerenciamento de Contêineres Docker para Aplicação "Proposta"
 
@@ -12,6 +12,7 @@ Os comandos abaixo demonstram a criação e execução de contêineres Docker pa
 
 ```bash    
 docker network create minha-rede-banco
+```
 
 **2. Execução do Contêiner da Aplicação Web:**
 
