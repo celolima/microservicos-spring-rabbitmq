@@ -1,8 +1,6 @@
 ### Cadastro de proposta e envio para as filas de notificação e análise de crédito
 
-<p align="center">
-    ![Modelo de negócio](misc/modelo-de-negocio.png)
-</p>
+![Modelo de negócio](misc/modelo-de-negocio.png)
 
 ### Gerenciamento de Contêineres Docker para Aplicação "Proposta"
 
