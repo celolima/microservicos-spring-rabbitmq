@@ -39,6 +39,26 @@
             "projectName": "proposta-app",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-NotificacaoApplication<notificacao-app>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.marcelo.notificacao.NotificacaoApplication",
+            "projectName": "notificacao-app",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-NotificacaoApplication<notificacao>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.marcelo.notificacao.NotificacaoApplication",
+            "projectName": "notificacao",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

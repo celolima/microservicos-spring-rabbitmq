@@ -1,0 +1,51 @@
+version: '3.8'
+
+networks:
+  minha-rede-banco:
+
+services:
+  proposta-web:
+    image: matheuspieropan/proposta-web
+    container_name: proposta-web-container
+    networks:
+      - minha-rede-banco
+    ports:
+      - "80:80"
+    depends_on:
+      - propostadb
+
+  propostadb:
+    image: postgres
+    container_name: propostadb
+    networks:
+      - minha-rede-banco
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: propostadb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  adminer-web:
+    image: adminer
+    container_name: adminer-web
+    networks:
+      - minha-rede-banco
+    ports:
+      - "9000:8080"
+    depends_on:
+      - propostadb
+
+  my-rabbit:
+    image: rabbitmq:3-management
+    container_name: my-rabbit
+    networks:
+      - minha-rede-banco
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+volumes:
+  db_data:
