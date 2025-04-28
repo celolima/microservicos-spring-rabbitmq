@@ -29,7 +29,12 @@ public class PropostaSemIntegracao {
 
     @Scheduled(fixedDelay = 10, timeUnit = TimeUnit.SECONDS)
     public void buscarPropostaSemIntegracao() {
+        if(this.propostaRepository.countPropostaIntegradaFalse() < 1) {
+            return;
+        }
+        
         logger.info("Nova tentativa de envio das propostas não integradas.");
+        
         this.propostaRepository.findAllByIntegradaFalse().forEach(proposta -> {
             try {
                 notificacaoService.notificar(proposta, exchange);
