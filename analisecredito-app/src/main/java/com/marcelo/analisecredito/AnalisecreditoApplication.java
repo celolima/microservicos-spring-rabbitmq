@@ -26,10 +26,10 @@ public class AnalisecreditoApplication {
 
 	/**
 	 * Comment with @Bean to execute on init app
-	 * @return
-	 */
+	 * @return	 
+	 * 
+	*/
 	public CommandLineRunner commandLineRunner() {
-
 		return args -> {
 			Proposta p = new Proposta(Long.valueOf(1),Double.valueOf(70000.00),Integer.valueOf(20),Boolean.TRUE,"Emprestimo consignado",new Usuario());
 			analiseCreditoService.analisar(p);
@@ -37,5 +37,4 @@ public class AnalisecreditoApplication {
 			logger.info(String.format("Sua proposta foi %s", p.getAprovada() ? "APROVADA" : "RECUSADA"));
 		};
 	}
-
 }

@@ -17,7 +17,7 @@ public class AnaliseCreditoService {
     private List<CalculoPonto> calculoPontoList;
 
     @Autowired
-    private NotificacaoRabbitService notificacaoRabbitService;
+    private NotificacaoRabbitMQService notificacaoService;
 
     @Value("${rabbitmq.propostaconcluida.exchange}")
     private String exchangePropostaConcluida;
@@ -33,7 +33,7 @@ public class AnaliseCreditoService {
             proposta.setObservacao(ex.getMessage());
         }
 
-        notificacaoRabbitService.notificar(exchangePropostaConcluida, proposta);
+        notificacaoService.notificar(exchangePropostaConcluida, proposta);
     }
-
+    
 }
