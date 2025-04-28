@@ -59,6 +59,16 @@
             "projectName": "notificacao",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AnalisecreditoApplication<analisecredito-app>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.marcelo.analisecredito.AnalisecreditoApplication",
+            "projectName": "analisecredito-app",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
