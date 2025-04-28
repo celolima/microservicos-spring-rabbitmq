@@ -20,7 +20,10 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfiguration {
 
     @Value("${rabbitmq.propostapendente.exchange}")
-    private String exchange;
+    private String exchangePropostaPendente;
+
+    @Value("${rabbitmq.propostaconcluida.exchange}")
+    private String exchangePropostaConcluida;    
 
     public RabbitMQConfiguration(RabbitTemplate rabbitTemplate) {
         rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
@@ -56,9 +59,11 @@ public class RabbitMQConfiguration {
         return event -> rabbitAdmin.initialize();
     }
 
+    // Exchange e binds da Proposta Pendente
+
     @Bean
     public FanoutExchange criarFanoutExchangePropostaPendente() {
-        return ExchangeBuilder.fanoutExchange(exchange).build();
+        return ExchangeBuilder.fanoutExchange(exchangePropostaPendente).build();
     }
 
     @Bean
@@ -72,5 +77,24 @@ public class RabbitMQConfiguration {
         return BindingBuilder.bind(criarFilaPropostaPendenteMsNotificacao())
             .to(criarFanoutExchangePropostaPendente());
     }
+
+    // Exchange e binds da Proposta Concluida
+
+    @Bean
+    public FanoutExchange criarFanoutExchangePropostaConcluida() {
+        return ExchangeBuilder.fanoutExchange(exchangePropostaConcluida).build();
+    }
+
+    @Bean
+    public Binding criarBindingPropostaConcluidaMsPropostaApp() {
+        return BindingBuilder.bind(criarFilaPropostaConcluidaMsProposta())
+            .to(criarFanoutExchangePropostaConcluida());
+    }
+
+    @Bean
+    public Binding criarBindingPropostaConcluidaMsNotificacao() {
+        return BindingBuilder.bind(criarFilaPropostaConcluidaMsNotificacao())
+            .to(criarFanoutExchangePropostaConcluida());
+    }    
 
 }
